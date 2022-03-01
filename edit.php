@@ -96,9 +96,9 @@ if ($category) {
 
 if ($editquestionselected && $confirm && confirm_sesskey()) {
     if ($confirm == md5($editquestionselected)) {
-       \qbank_bulkedit\helper::bulk_edit_questions($editquestionselected, $findtext, $replacement);
+        \qbank_bulkedit\helper::bulk_edit_questions($editquestionselected, $findtext, $replacement);
     }
-   // redirect(new moodle_url($returnurl, ['category' => "{$tocategoryid},{$contextid}"]));
+    redirect(new moodle_url($returnurl));
 }
 
 echo $OUTPUT->header();

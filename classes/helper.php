@@ -31,7 +31,7 @@ class helper {
      *
      * @param string $editquestionselected comma separated string of questions to be moved.
      */
-    public static function bulk_edit_questions(string $editquestionselected, string $findtext,string $replacement): void {
+    public static function bulk_edit_questions(string $editquestionselected, string $find, string $replace): void {
         global $DB;
         if ($questionids = explode(',', $editquestionselected)) {
             list($usql, $params) = $DB->get_in_or_equal($questionids);
@@ -43,10 +43,10 @@ class helper {
                      WHERE q.id
                      {$usql}";
             $questions = $DB->get_records_sql($sql, $params);
-        //     foreach ($questions as $question) {
-        //         question_require_capability_on($question, 'move');
-        //     }
-        //     question_move_questions_to_category($questionids, $tocategory->id);
+            foreach ($questions as $question) {
+                $updated = str_replace($find, $replace, $question->questiontext );
+                $DB->update_record('question', ['id' => $question->id, 'questiontext' => $updated], false);
+            }
         }
     }
 
