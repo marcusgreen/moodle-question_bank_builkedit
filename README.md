@@ -6,4 +6,4 @@ may not do what it claims to do and it might do things you don't expect it to.
 
 Do not install on a live site or put anywhere near data that matters to you. 
 
-If you would like further work along these lines contact Moodle partner Titus at http://www.tituslearning.com
+If you would like further work along these lines contact Moodle partner Titus athttps://www.tituslearning.com/contact-titus-learning/
