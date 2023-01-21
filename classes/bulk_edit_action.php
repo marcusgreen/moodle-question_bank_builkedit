@@ -20,8 +20,7 @@ namespace qbank_bulkedit;
  * Class bulk_move_action is the base class for moving questions.
  *
  * @package    qbank_bulkedit
- * @copyright  2021 Catalyst IT Australia Pty Ltd
- * @author     Safat Shahin <safatshahin@catalyst-au.net>
+ * @author     Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class bulk_edit_action extends \core_question\local\bank\bulk_action_base {
@@ -30,7 +29,7 @@ class bulk_edit_action extends \core_question\local\bank\bulk_action_base {
         return get_string('editbulkaction', 'qbank_bulkedit');
     }
 
-    public function get_bulk_action_key(): string {
+    public function get_key(): string {
         return 'edit';
     }
 
